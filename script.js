@@ -8,7 +8,7 @@ var s=document.getElementById('openstate');if(s)s.textContent=open?'Abierto ahor
 var li=document.querySelector('#hours li[data-d="'+d+'"]');if(li)li.classList.add('today');
 document.querySelectorAll('.sws').forEach(function(grp){grp.querySelectorAll('.sw').forEach(function(x){x.addEventListener('click',function(e){e.preventDefault();
 grp.querySelectorAll('.sw').forEach(function(y){y.classList.remove('on')});x.classList.add('on');
-document.documentElement.style.setProperty('--polish',x.dataset.c);var n=document.getElementById('cname');if(n)n.textContent=x.dataset.n;
+document.documentElement.style.setProperty('--polish',x.dataset.c);var hd=document.querySelector('.hand');if(hd){hd.classList.remove('paint');void hd.offsetWidth;hd.classList.add('paint')}var n=document.getElementById('cname');if(n)n.textContent=x.dataset.n;
 var h=grp.closest('form');if(h)h.querySelector('[name=c]').value=x.dataset.n;})})});
 var f=document.getElementById('bk');if(f){var dt=f.querySelector('[type=date]');try{dt.min=new Date().toISOString().slice(0,10)}catch(e){}
 f.addEventListener('submit',function(e){e.preventDefault();var v=function(k){return f.querySelector('[name='+k+']').value};
